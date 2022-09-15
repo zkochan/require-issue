@@ -8,7 +8,7 @@ try {
   console.log('failed requiering pkg');
 }
 
-fs.symlinkSync(path.join(__dirname, 'pkg'), './node_modules/pkg', 'dir');
+try { require('child_process').execSync("cp -r " + path.join(__dirname, 'pkg') + " node_modules/pkg"); } catch (err) {}
 
 try {
   require('pkg');
