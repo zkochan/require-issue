@@ -9,3 +9,5 @@ When the symlinked package has a main package at a custom location, then it does
 ```
 node test.js
 ```
+
+Both cases work with node.js v6.17.1. So it must be something introduced in node.js v7/v8
