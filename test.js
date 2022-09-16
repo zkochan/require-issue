@@ -8,7 +8,9 @@ try {
   console.log('failed requiering pkg');
 }
 
-try { require('child_process').execSync("cp -r " + path.join(__dirname, 'pkg') + " node_modules/pkg"); } catch (err) {}
+fs.mkdirSync(path.join(__dirname, 'node_modules/pkg/lib'), { recursive: true });
+fs.copyFileSync(path.join(__dirname, 'pkg/lib/index.js'), path.join(__dirname, 'node_modules/pkg/lib/index.js'));
+fs.copyFileSync(path.join(__dirname, 'pkg/package.json'), path.join(__dirname, 'node_modules/pkg/package.json'));
 
 try {
   require('pkg');
