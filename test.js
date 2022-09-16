@@ -14,6 +14,7 @@ fs.copyFileSync(path.join(__dirname, 'pkg/package.json'), path.join(__dirname, '
 
 try {
   require('pkg');
+  console.log('works')
 } catch (err) {
   console.log('failed requiering pkg');
 }
